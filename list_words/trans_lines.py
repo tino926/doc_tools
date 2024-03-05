@@ -11,7 +11,13 @@ def translate_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
-    translated_lines = [translate_line(line.strip(), translator) for line in lines]
+    # translated_lines = [translate_line(line.strip(), translator) for line in lines]
+    translated_lines = []
+    total_lines = len(lines)
+    for i, line in enumerate(lines, start=1):
+        translated_line = translate_line(line.strip(), translator)
+        translated_lines.append(translated_line)
+        print(f"Translated {i} out of {total_lines} lines.", end='\r')
 
     # Create the output filename by adding '_tr' to the original filename
     output_file_path = os.path.splitext(file_path)[0] + '_tr' + os.path.splitext(file_path)[1]
