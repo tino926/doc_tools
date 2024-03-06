@@ -1,7 +1,23 @@
 import sys
 import re
+import os
+import configparser
 
-print(f"Python version: {sys.version}")
+
+# Check if the ./pri/ subfolder exists
+if os.path.exists('./pri/'):
+    # Read the setting.ini file
+    config = configparser.ConfigParser()
+    config.read('./pri/setting.ini')
+    input_file_path = config.get('Settings', 'input_file_path')
+    output_file_path = config.get('Settings', 'output_file_path')
+    easy_file_path = './pri/easy.txt'
+else:
+    # Default paths if the subfolder does not exist
+    input_file_path = 'input.txt'
+    output_file_path = 'output.txt'
+    easy_file_path = 'easy.txt'
+
 
 def remove_duplicates_from_file(input_file_path, output_file_path):
     # Step   1: Read the file
@@ -11,7 +27,7 @@ def remove_duplicates_from_file(input_file_path, output_file_path):
     # Step   2: Split the text into words
     words = text.split()
 
-    with open('easy.txt', 'r') as file:
+    with open(easy_file_path, 'r') as file:
         text = file.read()
         easy_words = text.split()
         easy_words = [re.sub(r"[^\w']+", '', word).lower()
@@ -34,4 +50,5 @@ def remove_duplicates_from_file(input_file_path, output_file_path):
         for word in unique_words:
             file.write(word + '\n')
 
-remove_duplicates_from_file('input.txt', 'output.txt')
+
+remove_duplicates_from_file(input_file_path, output_file_path)
