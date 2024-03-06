@@ -1,0 +1,1 @@
+random permute the characters and put lines with fixed width
