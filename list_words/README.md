@@ -5,6 +5,10 @@ file, eliminating duplicates and excluding words found in easy.txt. Its primary
 goal is to facilitate the creation of a word list tailored for Language learning 
 purposes.
 
+list_words.py 可用來列出文字檔中的單字，排除重複並排除在 easy.txt 中
+出現的單字。 其主要目的是幫助創建適合語言學習的單字列表。
+trans_line.py 可用來為單字列表加上翻譯。
+
 ## Usage
 
 1. Ensure your `input.txt` is located in the same directory as `list_words.py`.
