@@ -14,3 +14,8 @@ purposes.
    ```
 3. Retrieve the results from `output.txt`.
 
+## Note
+
+The oxford_phrase_list.txt is copied and modified from 
+<https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-phrase-list/Oxford%20Phrase%20List.pdf>.
+I can't find the license for this file, so I'm assuming it's public domain. 
