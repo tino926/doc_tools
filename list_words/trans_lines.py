@@ -1,3 +1,4 @@
+# need to install googletrans==4.0.0-rc1
 from googletrans import Translator
 import sys
 import os
